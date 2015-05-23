@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+     <!--定义三组菜单  -->
+    <item android:title="@string/font_draw">
+        <menu>
+            <!--定义一组选择图形的餐单选项  -->
+            <group android:checkableBehavior="single">
+                <item android:title="@string/font_choose_draw">
+                    <menu>
+                        <group>
+                            <item
+                    			android:id="@+id/font_circle"
+                    			android:title="@string/font_circle"
+                    			/>
+               				<item
+                    			android:id="@+id/font_rect"
+                    			android:title="@string/font_rect"
+                    			/>
+               				<item
+                    			android:id="@+id/font_square"
+                    			android:title="@string/font_square"
+                    			/>
+             				<item
+                    			android:id="@+id/font_line"
+                    			android:title="@string/font_line"
+                    			/>
+             				<item
+                    			android:id="@+id/font_trigger"
+                    			android:title="@string/font_trigger"
+                    			/>
+                        </group>
+                    </menu>
+                </item>
+            </group>
+            
+            <!-- 定义一组选择颜色的菜单选项 -->
+            <group android:checkableBehavior="single">
+                <item android:title="@string/font_choose_color">
+                    <menu>
+                        <group>
+                            <item
+                    			android:id="@+id/font_red"
+                    			android:title="@string/font_red"
+                    			/>
+               				<item
+                    			android:id="@+id/font_blue"
+                    			android:title="@string/font_blue"
+                    			/>
+             				<item
+                    			android:id="@+id/font_green"
+                    			android:title="@string/font_green"
+                    			/>
+                        </group>
+                    </menu>
+                </item>
+            </group>
+            <item
+        		android:id="@+id/font_eraser"
+        		android:title="@string/font_eraser">
+    		</item>    
+        </menu>   
+    </item>
+    
+    <!-- 定义查看图形属性菜单选项 -->
+    <item
+        android:id="@+id/font_check"
+        android:title="@string/font_check">
+    </item>
+    
+    <!-- 查看生成图形结果选择 -->
+    <item
+        android:id="@+id/font_result"
+        android:title="@string/font_result">
+    </item>
+
+</menu>

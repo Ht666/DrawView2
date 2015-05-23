@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DrawMenu3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string name="font_draw">画图</string>
+	<string name="font_circle">圆形</string>
+	<string name="font_rect">长方形</string>
+	<string name="font_square">正方形</string>
+	<string name="font_trigger">三角形</string>
+	<string name="font_line">直线</string>
+	<string name="font_check">查看图形属性</string>
+	<string name="font_result">生成图形</string>
+	<string name="font_choose_draw">选择图形</string>
+	<string name="font_choose_color">选择颜色</string>
+	<string name="font_red">红色</string>
+	<string name="font_blue">蓝色</string>
+	<string name="font_green">绿色</string>
+	<string name="check_info">图形属性如下：</string>
+	<string name="result">生成图形</string>
+	<string name="font_eraser">橡皮擦</string>
+	
+</resources>
