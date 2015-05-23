@@ -11,6 +11,7 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -173,6 +174,11 @@ public class Draw4 extends View {
 			
 	}
 	*/
+	
+	public void testGithub(){
+		Log.d("GitHub", "This method just for test github system");
+	}
+	
 	public void SetColor(int C){
 		
 		Eraser=false;
