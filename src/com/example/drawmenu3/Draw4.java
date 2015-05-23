@@ -175,9 +175,9 @@ public class Draw4 extends View {
 	}
 	*/
 	
-	public void testGithub(){
+	/*public void testGithub(){
 		Log.d("GitHub", "This method just for test github system");
-	}
+	}//*/
 	
 	public void SetColor(int C){
 		
