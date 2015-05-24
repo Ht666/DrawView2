@@ -10,6 +10,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -31,6 +32,7 @@ public class Draw4 extends View {
 	private int View_Width;
 	private int View_height;
 	
+	public int choose;
 	
 	//创建一个缓冲区域,画布，画笔，画图路径
 	Bitmap cacheBitmap=null;
@@ -110,6 +112,21 @@ public class Draw4 extends View {
 	            break;  
 	        }  
 				
+		}else{
+			
+			switch (event.getAction()) {  
+	        case MotionEvent.ACTION_DOWN:  
+	  	        touch_start(currentX,currentY);
+	            break;  
+	        case MotionEvent.ACTION_MOVE:   
+	        	 touch_move(currentX,currentY);   
+	            break;  
+	        case MotionEvent.ACTION_UP:  
+	        	touch_up(); 
+	            break;  
+	        }  
+			
+			
 		}
 		
 		// 通知当前组件重绘自己
@@ -147,7 +164,7 @@ public class Draw4 extends View {
 		
 	}
 
-	
+	/*
 	public void SetDraw(int Choose){
 		
 		Eraser=false;
@@ -183,6 +200,99 @@ public class Draw4 extends View {
 			break;
 		
 		}
+	}*/
+	
+	//每次画图都清空路径,移动到起点处，并记录起点
+	public void touch_start(float x,float y){
+		x=currentX;
+		y=currentY;
+		path.reset();   
+		path.moveTo(x, y);
+		preX=x;
+		preY=y;
+		
 	}
+	
+	public void touch_move(float x,float y){
+		
+		x=currentX;
+		y=currentY;
+		
+		switch(choose){
+		
+		case 4:
+			//画圆
+			path.reset();
+			if(x>=preX){
+				path.addCircle(preX, preY, (x-preX)/2, Path.Direction.CW);
+				
+				
+			}else{
+				path.addCircle(preX, preY, (preX-x)/2, Path.Direction.CW);
+				
+			}
+			
+		case 7:
+			//画直线
+			path.reset();
+			path.moveTo(preX, preY);
+			path.lineTo(x,y);
+			//cachecanvas.drawPath(path, p);
+			break;
+			
+		case 5:
+			//画矩形
+			path.reset();		
+			RectF rect1=new RectF();
+			rect1.set(preX, preY, x,y);
+			path.addRect(rect1, Path.Direction.CW);
+			break;
+			
+		/*case 8:
+			//画三角形
+			path.reset();
+			
+			RectF rect2=new RectF();
+			
+			
+			//rect1.set(left, top, right, bottom);
+			path.addPath(path, currentX, currentY);
+			path.arcTo(rect2, x, y);
+			path.addPath(path, currentX, currentY);
+			
+			
+			Path path1=new Path();
+			path1.moveTo(currentX, currentY);
+			path1.lineTo(currentX+30,currentY +40);
+			path1.lineTo(currentX-50, currentY+60);
+			path1.close();
+			cachecanvas.drawPath(path1, p);
+			break;*/
+			
+		case 6:
+			//画正方形
+			path.reset();
+			RectF rect3=new RectF();
+			if(x>=preX){
+				rect3.set(preX, preY, x, preY+x-preX);
+				
+			}else{
+				rect3.set(preX, preY, x, preY+preX-x);
+				
+			}
+			path.addRect(rect3, Path.Direction.CW);
+			break;
+		
+		}
+		
+	}
+
+	//终点处，将Path绘制到画布中
+	public void touch_up(){
+		cachecanvas.drawBitmap(cacheBitmap, 0, 0, p);
+		path.reset();
+	}
+	
+	
 
 }

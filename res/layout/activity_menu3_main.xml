@@ -18,5 +18,13 @@
         android:width="320dp"
         android:height="480dp"
         />
+	 
+	 <com.example.drawmenu3.Draw4
+        android:id="@+id/draw4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="320dp"
+        android:height="480dp"
+        />
 
 </RelativeLayout>
