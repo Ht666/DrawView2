@@ -11,8 +11,6 @@ import android.widget.RelativeLayout;
 
 public class Menu3MainActivity extends Activity {
 
-
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,10 +33,7 @@ public class Menu3MainActivity extends Activity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		//final DrawCircle draw = (DrawCircle) this.findViewById(R.id.draw);
-		final Draw4 draw=(Draw4) this.findViewById(R.id.draw4);
-		
-		int choose;
+		final DrawCircle draw = (DrawCircle) this.findViewById(R.id.draw);
 		
 		int id = item.getItemId();
 		switch(id){
@@ -52,43 +47,36 @@ public class Menu3MainActivity extends Activity {
 		
 		//设置画笔颜色
 		case(R.id.font_blue):
-			choose=2;
-			draw.SetColor(choose);
+			draw.p.setColor(Color.BLUE);
 			break;
 		case(R.id.font_green):
-			choose=3;
-			draw.SetColor(choose);
+			draw.p.setColor(Color.GREEN);
 			break;
 		case(R.id.font_red):
-			choose=1;
-			draw.SetColor(choose);
+			draw.p.setColor(Color.RED);
 			break;
 			//draw.onDraw(Canvas canvas);
 			
 		//根据所选图形画图
 		case(R.id.font_circle):
-			choose=4;
-			//draw.SetDraw(choose);
+			//draw.cachecanvas.drawCircle(cx, cy, radius, paint);
+			draw.drawcircle();
+			//draw.onDraw();
+			//super.onCreate(savedInstanceState);
 			break;
 		case(R.id.font_line):
-			choose=7;
-			//draw.SetDraw(choose);
+			draw.drawline();
 			break;
 		case(R.id.font_rect):
-			choose=5;
-			//draw.SetDraw(choose);
+			draw.drawrect();
 			break;
 		case(R.id.font_square):
-			choose=6;
-			//draw.SetDraw(choose);
+			draw.drawsquare();
 			break;
 		case(R.id.font_trigger):
-			choose=8;
-			//draw.SetDraw(choose);
+			draw.drawtriggle();
 			break;
-		case(R.id.font_eraser):
-			draw.Eraser=true;
-			break;
+		
 		
 		}
 		

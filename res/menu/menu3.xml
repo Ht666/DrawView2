@@ -54,15 +54,10 @@
                     </menu>
                 </item>
             </group>
-            
-            //定义橡皮擦
-            <group android:checkableBehavior="single">
-                <item
-        			android:id="@+id/font_eraser"
-        			android:title="@string/font_eraser"
-        			/>
-            </group>
-             
+            <item
+        		android:id="@+id/font_eraser"
+        		android:title="@string/font_eraser">
+    		</item>    
         </menu>   
     </item>
     
@@ -77,7 +72,5 @@
         android:id="@+id/font_result"
         android:title="@string/font_result">
     </item>
-    
-    
 
 </menu>
